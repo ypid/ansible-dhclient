@@ -1,0 +1,22 @@
+---
+
+- name: Ensure required packages are installed
+  apt:
+    name: '{{ item }}'
+    state: 'latest'
+    install_recommends: False
+  with_flattened: '{{ dhclient__base_packages }}'
+
+- name: Configure different hostname in /etc/dhcp/dhclient.conf
+  lineinfile:
+    dest: '/etc/dhcp/dhclient.conf'
+    regexp: '^send host-name'
+    line: 'send host-name "{{ dhclient__send_hostname }}";'
+  when: (dhclient__send_hostname not in [ 'gethostname()' ])
+
+- name: Let dhclient figure out the hostname to use
+  lineinfile:
+    dest: '/etc/dhcp/dhclient.conf'
+    regexp: '^send host-name'
+    line: 'send host-name {{ dhclient__send_hostname }};'
+  when: (dhclient__send_hostname in [ 'gethostname()' ])

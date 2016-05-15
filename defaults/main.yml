@@ -1,0 +1,35 @@
+---
+# Default variables
+# =================
+
+# .. contents:: Sections
+#    :local:
+#
+# .. Required packages (((
+#
+# ---------------------
+#   Required packages
+# ---------------------
+
+# .. envvar:: dhclient__base_packages
+#
+# List of base packages to install.
+dhclient__base_packages:
+  - 'isc-dhcp-client'
+
+# .. )))
+
+# .. dhclient configuration (((
+#
+# --------------------------
+#   dhclient configuration
+# --------------------------
+
+# .. envvar:: dhclient__send_hostname
+#
+# Hostname to send by :program:`dhclient`. When an ``gethostname()`` is defined, the
+# hostname will not be explicitly set in :file:`/etc/dhcp/dhclient.conf` which
+# should result in the system hostname being used.
+dhclient__send_hostname: 'gethostname()'
+
+# .. )))
