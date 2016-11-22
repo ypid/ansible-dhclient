@@ -5,7 +5,7 @@ dependencies: []
 galaxy_info:
 
   author: 'Robin Schneider'
-  description: 'Configure dhclient.'
+  description: 'Configure dhclient'
   license: 'GPL-3.0'
   min_ansible_version: '1.9.0'
 

@@ -1,8 +1,8 @@
 Introduction
 ============
 
-Configure the hostname to be send by :program:`dhclient` in case it should differ from
-the system hostname.
+Configure the hostname to be send by :program:`dhclient` in case it should
+differ from the system hostname.
 
 
 Installation
