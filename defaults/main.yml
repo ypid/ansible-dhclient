@@ -1,35 +1,35 @@
 ---
-# Default variables
-# =================
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+
+# ypid.dhclient default variables [[[
+# ===================================
 
 # .. contents:: Sections
 #    :local:
 #
-# .. Required packages (((
-#
-# ---------------------
-#   Required packages
+# .. include:: includes/all.rst
+
+
+# Required packages [[[
 # ---------------------
 
-# .. envvar:: dhclient__base_packages
+# .. envvar:: dhclient__base_packages [[[
 #
 # List of base packages to install.
 dhclient__base_packages:
   - 'isc-dhcp-client'
-
-# .. )))
-
-# .. dhclient configuration (((
-#
-# --------------------------
-#   dhclient configuration
+                                                                   # ]]]
+                                                                   # ]]]
+# dhclient configuration [[[
 # --------------------------
 
-# .. envvar:: dhclient__send_hostname
+# .. envvar:: dhclient__send_hostname [[[
 #
-# Hostname to send by :program:`dhclient`. When an ``gethostname()`` is defined, the
-# hostname will not be explicitly set in :file:`/etc/dhcp/dhclient.conf` which
-# should result in the system hostname being used.
+# Hostname to send by :program:`dhclient`. When an ``gethostname()`` is
+# defined, the hostname will not be explicitly set in
+# :file:`/etc/dhcp/dhclient.conf` which should result in the system hostname
+# being used.
 dhclient__send_hostname: 'gethostname()'
-
-# .. )))
+                                                                   # ]]]
+                                                                   # ]]]
+                                                                   # ]]]
