@@ -1,11 +1,11 @@
 ---
 
-- name: Ensure required packages are installed
-  apt:
+- name: Ensure specified packages are in there desired state
+  package:
     name: '{{ item }}'
-    state: 'latest'
-    install_recommends: False
+    state: 'present'
   with_flattened: '{{ dhclient__base_packages }}'
+  tags: [ 'role::dhclient:pkts' ]
 
 - name: Configure different hostname in /etc/dhcp/dhclient.conf
   lineinfile:
